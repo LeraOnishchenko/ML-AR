@@ -80,14 +80,25 @@
                     <view key="view" contentMode="scaleToFill" id="Kla-dJ-ZNp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5R9-Pg-zSZ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </arscnView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="M2m-zt-vyS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="5R9-Pg-zSZ" secondAttribute="bottom" id="6CR-Sy-mLQ"/>
+                            <constraint firstAttribute="trailing" secondItem="5R9-Pg-zSZ" secondAttribute="trailing" id="Ais-fI-LKn"/>
+                            <constraint firstItem="5R9-Pg-zSZ" firstAttribute="leading" secondItem="Kla-dJ-ZNp" secondAttribute="leading" id="Ogw-XZ-ybR"/>
+                            <constraint firstItem="5R9-Pg-zSZ" firstAttribute="top" secondItem="Kla-dJ-ZNp" secondAttribute="top" id="i0g-Bo-YW3"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QJH-DR-RK3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="116-4Y-tFx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="894" y="66"/>
+            <point key="canvasLocation" x="892.75362318840587" y="65.625"/>
         </scene>
     </scenes>
     <resources>
