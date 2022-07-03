@@ -9,20 +9,20 @@
 /* Begin PBXBuildFile section */
 		048BF562286BB4A2007EB9A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BF561286BB4A2007EB9A3 /* AppDelegate.swift */; };
 		048BF564286BB4A2007EB9A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BF563286BB4A2007EB9A3 /* SceneDelegate.swift */; };
-		048BF566286BB4A2007EB9A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BF565286BB4A2007EB9A3 /* ViewController.swift */; };
 		048BF569286BB4A2007EB9A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048BF567286BB4A2007EB9A3 /* Main.storyboard */; };
 		048BF56B286BB4A4007EB9A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048BF56A286BB4A4007EB9A3 /* Assets.xcassets */; };
 		048BF56E286BB4A4007EB9A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048BF56C286BB4A4007EB9A3 /* LaunchScreen.storyboard */; };
 		048BF578286C3A3E007EB9A3 /* OrientationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BF577286C3A3E007EB9A3 /* OrientationExtension.swift */; };
 		048BF57A286C3AAA007EB9A3 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BF579286C3AAA007EB9A3 /* WelcomeViewController.swift */; };
 		04BFC778286D9E03007DAA19 /* ButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFC777286D9E03007DAA19 /* ButtonsViewController.swift */; };
+		04BFC7FE2871EE9E007DAA19 /* Flower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFC7FD2871EE9E007DAA19 /* Flower.swift */; };
+		04BFC8002871EECE007DAA19 /* FlowerSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFC7FF2871EECE007DAA19 /* FlowerSearcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		048BF55E286BB4A2007EB9A3 /* ML_AR_FlowerRecognizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ML_AR_FlowerRecognizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		048BF561286BB4A2007EB9A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		048BF563286BB4A2007EB9A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		048BF565286BB4A2007EB9A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		048BF568286BB4A2007EB9A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		048BF56A286BB4A4007EB9A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		048BF56D286BB4A4007EB9A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,6 +30,8 @@
 		048BF577286C3A3E007EB9A3 /* OrientationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationExtension.swift; sourceTree = "<group>"; };
 		048BF579286C3AAA007EB9A3 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		04BFC777286D9E03007DAA19 /* ButtonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsViewController.swift; sourceTree = "<group>"; };
+		04BFC7FD2871EE9E007DAA19 /* Flower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flower.swift; sourceTree = "<group>"; };
+		04BFC7FF2871EECE007DAA19 /* FlowerSearcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerSearcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,14 +64,14 @@
 		048BF560286BB4A2007EB9A3 /* ML_AR_FlowerRecognizer */ = {
 			isa = PBXGroup;
 			children = (
+				04BFC7FC2871EE88007DAA19 /* Extensions */,
+				04BFC7FB2871EE6E007DAA19 /* Model */,
 				04BFC776286D9DE4007DAA19 /* ViewControllers */,
 				048BF561286BB4A2007EB9A3 /* AppDelegate.swift */,
 				048BF563286BB4A2007EB9A3 /* SceneDelegate.swift */,
-				048BF565286BB4A2007EB9A3 /* ViewController.swift */,
-				048BF577286C3A3E007EB9A3 /* OrientationExtension.swift */,
 				048BF567286BB4A2007EB9A3 /* Main.storyboard */,
-				048BF56A286BB4A4007EB9A3 /* Assets.xcassets */,
 				048BF56C286BB4A4007EB9A3 /* LaunchScreen.storyboard */,
+				048BF56A286BB4A4007EB9A3 /* Assets.xcassets */,
 				048BF56F286BB4A4007EB9A3 /* Info.plist */,
 			);
 			path = ML_AR_FlowerRecognizer;
@@ -82,6 +84,23 @@
 				04BFC777286D9E03007DAA19 /* ButtonsViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		04BFC7FB2871EE6E007DAA19 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04BFC7FD2871EE9E007DAA19 /* Flower.swift */,
+				04BFC7FF2871EECE007DAA19 /* FlowerSearcher.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04BFC7FC2871EE88007DAA19 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				048BF577286C3A3E007EB9A3 /* OrientationExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,7 +174,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				048BF566286BB4A2007EB9A3 /* ViewController.swift in Sources */,
+				04BFC7FE2871EE9E007DAA19 /* Flower.swift in Sources */,
+				04BFC8002871EECE007DAA19 /* FlowerSearcher.swift in Sources */,
 				048BF562286BB4A2007EB9A3 /* AppDelegate.swift in Sources */,
 				048BF578286C3A3E007EB9A3 /* OrientationExtension.swift in Sources */,
 				048BF57A286C3AAA007EB9A3 /* WelcomeViewController.swift in Sources */,
