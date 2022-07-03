@@ -130,8 +130,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cameraImage" destination="gaX-ZW-XH8" id="rzL-04-278"/>
-                        <outlet property="photoImage" destination="pki-aF-pTv" id="FVQ-jV-9eJ"/>
+                        <outlet property="cameraImage" destination="gaX-ZW-XH8" id="nCs-tx-iuF"/>
+                        <outlet property="photoImage" destination="pki-aF-pTv" id="hGv-dv-MLg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ql-0S-CY4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

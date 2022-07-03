@@ -17,6 +17,10 @@
 		04BFC778286D9E03007DAA19 /* ButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFC777286D9E03007DAA19 /* ButtonsViewController.swift */; };
 		04BFC7FE2871EE9E007DAA19 /* Flower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFC7FD2871EE9E007DAA19 /* Flower.swift */; };
 		04BFC8002871EECE007DAA19 /* FlowerSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFC7FF2871EECE007DAA19 /* FlowerSearcher.swift */; };
+		04BFC8072871FA12007DAA19 /* ImageRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFC8052871FA12007DAA19 /* ImageRecognitionViewController.swift */; };
+		04BFC8082871FA12007DAA19 /* ImageRecognitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BFC8062871FA12007DAA19 /* ImageRecognitionViewController.xib */; };
+		04BFC80A2871FCEE007DAA19 /* Predictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFC8092871FCEE007DAA19 /* Predictor.swift */; };
+		04BFC80E2872009E007DAA19 /* MyPlantsClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 04BFC80D2872009E007DAA19 /* MyPlantsClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		04BFC777286D9E03007DAA19 /* ButtonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsViewController.swift; sourceTree = "<group>"; };
 		04BFC7FD2871EE9E007DAA19 /* Flower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flower.swift; sourceTree = "<group>"; };
 		04BFC7FF2871EECE007DAA19 /* FlowerSearcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerSearcher.swift; sourceTree = "<group>"; };
+		04BFC8052871FA12007DAA19 /* ImageRecognitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRecognitionViewController.swift; sourceTree = "<group>"; };
+		04BFC8062871FA12007DAA19 /* ImageRecognitionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageRecognitionViewController.xib; sourceTree = "<group>"; };
+		04BFC8092871FCEE007DAA19 /* Predictor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Predictor.swift; sourceTree = "<group>"; };
+		04BFC80D2872009E007DAA19 /* MyPlantsClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MyPlantsClassifier.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,13 +72,14 @@
 		048BF560286BB4A2007EB9A3 /* ML_AR_FlowerRecognizer */ = {
 			isa = PBXGroup;
 			children = (
-				04BFC7FC2871EE88007DAA19 /* Extensions */,
+				04BFC7FC2871EE88007DAA19 /* Utils */,
 				04BFC7FB2871EE6E007DAA19 /* Model */,
 				04BFC776286D9DE4007DAA19 /* ViewControllers */,
 				048BF561286BB4A2007EB9A3 /* AppDelegate.swift */,
 				048BF563286BB4A2007EB9A3 /* SceneDelegate.swift */,
 				048BF567286BB4A2007EB9A3 /* Main.storyboard */,
 				048BF56C286BB4A4007EB9A3 /* LaunchScreen.storyboard */,
+				04BFC80D2872009E007DAA19 /* MyPlantsClassifier.mlmodel */,
 				048BF56A286BB4A4007EB9A3 /* Assets.xcassets */,
 				048BF56F286BB4A4007EB9A3 /* Info.plist */,
 			);
@@ -82,6 +91,8 @@
 			children = (
 				048BF579286C3AAA007EB9A3 /* WelcomeViewController.swift */,
 				04BFC777286D9E03007DAA19 /* ButtonsViewController.swift */,
+				04BFC8052871FA12007DAA19 /* ImageRecognitionViewController.swift */,
+				04BFC8062871FA12007DAA19 /* ImageRecognitionViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -95,12 +106,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		04BFC7FC2871EE88007DAA19 /* Extensions */ = {
+		04BFC7FC2871EE88007DAA19 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				04BFC8092871FCEE007DAA19 /* Predictor.swift */,
 				048BF577286C3A3E007EB9A3 /* OrientationExtension.swift */,
 			);
-			path = Extensions;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +175,7 @@
 			files = (
 				048BF56E286BB4A4007EB9A3 /* LaunchScreen.storyboard in Resources */,
 				048BF56B286BB4A4007EB9A3 /* Assets.xcassets in Resources */,
+				04BFC8082871FA12007DAA19 /* ImageRecognitionViewController.xib in Resources */,
 				048BF569286BB4A2007EB9A3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,11 +189,14 @@
 			files = (
 				04BFC7FE2871EE9E007DAA19 /* Flower.swift in Sources */,
 				04BFC8002871EECE007DAA19 /* FlowerSearcher.swift in Sources */,
+				04BFC8072871FA12007DAA19 /* ImageRecognitionViewController.swift in Sources */,
 				048BF562286BB4A2007EB9A3 /* AppDelegate.swift in Sources */,
 				048BF578286C3A3E007EB9A3 /* OrientationExtension.swift in Sources */,
 				048BF57A286C3AAA007EB9A3 /* WelcomeViewController.swift in Sources */,
 				04BFC778286D9E03007DAA19 /* ButtonsViewController.swift in Sources */,
+				04BFC80A2871FCEE007DAA19 /* Predictor.swift in Sources */,
 				048BF564286BB4A2007EB9A3 /* SceneDelegate.swift in Sources */,
+				04BFC80E2872009E007DAA19 /* MyPlantsClassifier.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

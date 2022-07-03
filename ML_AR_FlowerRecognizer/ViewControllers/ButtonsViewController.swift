@@ -43,4 +43,15 @@ class ButtonsViewController: UIViewController, UIImagePickerControllerDelegate, 
                                       style: .default))
         self.present(alert, animated: true, completion: nil)
     }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[.originalImage] as! UIImage
+        picker.dismiss(animated: true)
+
+        let vc = ImageRecognitionViewController(nibName: "ImageRecognitionViewController", bundle: nil)
+        vc.setImage(image)
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
 }
