@@ -21,6 +21,9 @@
 		04BFC8082871FA12007DAA19 /* ImageRecognitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BFC8062871FA12007DAA19 /* ImageRecognitionViewController.xib */; };
 		04BFC80A2871FCEE007DAA19 /* Predictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFC8092871FCEE007DAA19 /* Predictor.swift */; };
 		04BFC80E2872009E007DAA19 /* MyPlantsClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 04BFC80D2872009E007DAA19 /* MyPlantsClassifier.mlmodel */; };
+		04BFC82F2874D9E3007DAA19 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 04BFC82E2874D9E3007DAA19 /* art.scnassets */; };
+		04BFC8322875B263007DAA19 /* ARSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFC8302875B262007DAA19 /* ARSceneViewController.swift */; };
+		04BFC8332875B263007DAA19 /* ARSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BFC8312875B263007DAA19 /* ARSceneViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		04BFC8062871FA12007DAA19 /* ImageRecognitionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageRecognitionViewController.xib; sourceTree = "<group>"; };
 		04BFC8092871FCEE007DAA19 /* Predictor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Predictor.swift; sourceTree = "<group>"; };
 		04BFC80D2872009E007DAA19 /* MyPlantsClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MyPlantsClassifier.mlmodel; sourceTree = "<group>"; };
+		04BFC82E2874D9E3007DAA19 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		04BFC8302875B262007DAA19 /* ARSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneViewController.swift; sourceTree = "<group>"; };
+		04BFC8312875B263007DAA19 /* ARSceneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ARSceneViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 				048BF56C286BB4A4007EB9A3 /* LaunchScreen.storyboard */,
 				04BFC80D2872009E007DAA19 /* MyPlantsClassifier.mlmodel */,
 				048BF56A286BB4A4007EB9A3 /* Assets.xcassets */,
+				04BFC82E2874D9E3007DAA19 /* art.scnassets */,
 				048BF56F286BB4A4007EB9A3 /* Info.plist */,
 			);
 			path = ML_AR_FlowerRecognizer;
@@ -93,6 +100,8 @@
 				04BFC777286D9E03007DAA19 /* ButtonsViewController.swift */,
 				04BFC8052871FA12007DAA19 /* ImageRecognitionViewController.swift */,
 				04BFC8062871FA12007DAA19 /* ImageRecognitionViewController.xib */,
+				04BFC8302875B262007DAA19 /* ARSceneViewController.swift */,
+				04BFC8312875B263007DAA19 /* ARSceneViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -175,7 +184,9 @@
 			files = (
 				048BF56E286BB4A4007EB9A3 /* LaunchScreen.storyboard in Resources */,
 				048BF56B286BB4A4007EB9A3 /* Assets.xcassets in Resources */,
+				04BFC82F2874D9E3007DAA19 /* art.scnassets in Resources */,
 				04BFC8082871FA12007DAA19 /* ImageRecognitionViewController.xib in Resources */,
+				04BFC8332875B263007DAA19 /* ARSceneViewController.xib in Resources */,
 				048BF569286BB4A2007EB9A3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,6 +205,7 @@
 				048BF578286C3A3E007EB9A3 /* OrientationExtension.swift in Sources */,
 				048BF57A286C3AAA007EB9A3 /* WelcomeViewController.swift in Sources */,
 				04BFC778286D9E03007DAA19 /* ButtonsViewController.swift in Sources */,
+				04BFC8322875B263007DAA19 /* ARSceneViewController.swift in Sources */,
 				04BFC80A2871FCEE007DAA19 /* Predictor.swift in Sources */,
 				048BF564286BB4A2007EB9A3 /* SceneDelegate.swift in Sources */,
 				04BFC80E2872009E007DAA19 /* MyPlantsClassifier.mlmodel in Sources */,
@@ -346,9 +358,12 @@
 				DEVELOPMENT_TEAM = VNU8KKW4GG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ML_AR_FlowerRecognizer/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "The app needs access to your camera to use Augmented Reality.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -375,9 +390,12 @@
 				DEVELOPMENT_TEAM = VNU8KKW4GG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ML_AR_FlowerRecognizer/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "The app needs access to your camera to use Augmented Reality.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

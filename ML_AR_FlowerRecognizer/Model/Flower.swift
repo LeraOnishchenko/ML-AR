@@ -8,18 +8,18 @@
 import Foundation
 
 struct FlowerDescription: Codable {
-    private let origin: String
-    private let blooming: String
+    let origin: String
+    let blooming: String
 }
 
 struct FlowerMaitenance: Codable {
-    private let soil: String
-    private let sunlight: String
-    private let watering: String
+    let soil: String
+    let sunlight: String
+    let watering: String
 }
 
 struct Flower: Codable {
-    private let name: String
-    private let description: FlowerDescription
-    private let maintenance: FlowerMaitenance
+    let name: String
+    let description: FlowerDescription
+    let maintenance: FlowerMaitenance
 }

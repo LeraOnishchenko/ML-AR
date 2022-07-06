@@ -36,6 +36,13 @@ class ButtonsViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
 
     @objc func cameraTapped() {
+        let vc = ARSceneViewController()
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+
+    @objc func cameraTappedAlert() {
         let alert = UIAlertController(title: "Oops!",
                                       message: "The feature is not implemented yet.",
                                       preferredStyle: .alert)

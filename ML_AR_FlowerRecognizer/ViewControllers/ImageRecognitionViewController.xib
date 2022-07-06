@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageRecognitionViewController" customModule="ML_AR_FlowerRecognizer" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="BXU-zo-A0O" id="fa6-6u-Opr"/>
                 <outlet property="bloomingLabel" destination="tUV-sK-3w6" id="oOd-Fx-TYl"/>
                 <outlet property="flowerNameLabel" destination="F3R-Ot-T7A" id="3K7-W4-Vct"/>
                 <outlet property="galleryImage" destination="v91-ia-Rtl" id="bCJ-Q5-IOd"/>
@@ -103,15 +104,27 @@
                         <constraint firstAttribute="height" constant="50" id="enO-HE-KM7"/>
                     </constraints>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BXU-zo-A0O">
+                    <rect key="frame" x="16" y="44" width="48" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="hva-DI-l3T"/>
+                        <constraint firstAttribute="width" constant="48" id="vYY-78-uYY"/>
+                    </constraints>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="chevron.backward.2" catalog="system"/>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="BXU-zo-A0O" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="0bh-rA-Kb3"/>
                 <constraint firstItem="v91-ia-Rtl" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="1ez-Sx-99W"/>
                 <constraint firstItem="mNr-8V-Zyq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="262-cc-2Va"/>
                 <constraint firstItem="rcD-lg-Dvk" firstAttribute="top" secondItem="v91-ia-Rtl" secondAttribute="bottom" id="6JH-Cc-kr4"/>
                 <constraint firstItem="mNr-8V-Zyq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="MjO-ar-z9g"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="rcD-lg-Dvk" secondAttribute="bottom" id="Wsg-Fy-OhL"/>
+                <constraint firstItem="BXU-zo-A0O" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="bjF-j8-Qaf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rcD-lg-Dvk" secondAttribute="trailing" id="dLa-4U-80b"/>
                 <constraint firstItem="rcD-lg-Dvk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hl8-a3-Ven"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mNr-8V-Zyq" secondAttribute="trailing" id="l1F-hA-qRD"/>
@@ -122,6 +135,7 @@
         </view>
     </objects>
     <resources>
+        <image name="chevron.backward.2" catalog="system" width="128" height="105"/>
         <image name="photo.artframe" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
