@@ -9,18 +9,18 @@ import UIKit
 
 class ImageRecognitionViewController: UIViewController {
 
-    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet private weak var backButton: UIButton!
 
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var flowerNameLabel: UILabel!
-    @IBOutlet weak var probabilityLabel: UILabel!
-    @IBOutlet weak var originLabel: UILabel!
-    @IBOutlet weak var bloomingLabel: UILabel!
-    @IBOutlet weak var sunLabel: UILabel!
-    @IBOutlet weak var wateringLabel: UILabel!
-    @IBOutlet weak var soilLabel: UILabel!
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var flowerNameLabel: UILabel!
+    @IBOutlet private weak var probabilityLabel: UILabel!
+    @IBOutlet private weak var originLabel: UILabel!
+    @IBOutlet private weak var bloomingLabel: UILabel!
+    @IBOutlet private weak var sunLabel: UILabel!
+    @IBOutlet private weak var wateringLabel: UILabel!
+    @IBOutlet private weak var soilLabel: UILabel!
 
-    @IBOutlet weak var galleryImage: UIImageView!
+    @IBOutlet private weak var galleryImage: UIImageView!
 
     private var image: UIImage?
 

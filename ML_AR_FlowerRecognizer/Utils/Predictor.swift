@@ -34,6 +34,20 @@ class Predictor {
         }
     }
 
+    func predict(image: CIImage, completion: @escaping (([Prediction]?) -> Void)) {
+        self.completion = completion
+
+        let request = classificationRequest()
+        let handler = VNImageRequestHandler(ciImage: image,
+                                            orientation: CGImagePropertyOrientation(UIImage(ciImage: image).imageOrientation))
+        
+        do {
+            try handler.perform([request])
+        } catch {
+            print(error)
+        }
+    }
+
     private func classificationRequest() -> VNImageBasedRequest {
         let request = VNCoreMLRequest(model: model, completionHandler: requestCompletionHandler(_:error:))
         request.imageCropAndScaleOption = .centerCrop

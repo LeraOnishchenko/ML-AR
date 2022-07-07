@@ -9,8 +9,8 @@ import UIKit
 
 class ButtonsViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    @IBOutlet weak var photoImage: UIImageView!
-    @IBOutlet weak var cameraImage: UIImageView!
+    @IBOutlet private weak var photoImage: UIImageView!
+    @IBOutlet private weak var cameraImage: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

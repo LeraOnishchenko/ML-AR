@@ -10,12 +10,14 @@ import Foundation
 final class FlowerSearcher {
     @discardableResult
     func findFlowerWith(name: String) -> Flower? {
-        var uc = URLComponents()
-        uc.scheme = "https"
-        uc.host = "raw.githubusercontent.com"
-        uc.path = "/irazubrytska/FlowerRepo/main/\(name).json"
+        let urlString = "https://raw.githubusercontent.com/irazubrytska/FlowerRepo/main/\(name).json"
 
-        let data = try? Data(contentsOf: URL(string: uc.url!.absoluteString)!)
+        guard let url = URL(string: urlString) else {
+            print("ERROR - invalid url")
+            return nil
+        }
+
+        let data = try? Data(contentsOf: url)
         guard let data = data,
               let flower = try? JSONDecoder().decode(Flower.self, from: data) else {
             print("CANNOT decode flower with name \(name)")
