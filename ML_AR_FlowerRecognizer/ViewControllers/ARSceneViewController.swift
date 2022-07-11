@@ -13,10 +13,9 @@ class ARSceneViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet private var sceneView: ARSCNView!
     @IBOutlet private weak var backButton: UIButton!
+    @IBOutlet weak var clearButton: UIButton!
 
     private let predictor = Predictor()
-
-    private let bubbleDepth : Float = 0.01
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +34,7 @@ class ARSceneViewController: UIViewController, ARSCNViewDelegate {
 
     private func setupActions() {
         backButton.addTarget(self, action: #selector(moveBack), for: .touchUpInside)
+        clearButton.addTarget(self, action: #selector(clearScene), for: .touchUpInside)
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         view.addGestureRecognizer(tapGesture)
@@ -58,6 +58,12 @@ class ARSceneViewController: UIViewController, ARSCNViewDelegate {
         self.dismiss(animated: true)
     }
 
+    @objc func clearScene() {
+        sceneView.scene.rootNode.enumerateChildNodes({ (node,_)  in
+            node.removeFromParentNode()
+        })
+    }
+
     @objc func handleTap() {
         let results = sceneView.hitTest(sceneView.center, types: [.estimatedHorizontalPlane])
 
@@ -77,50 +83,39 @@ class ARSceneViewController: UIViewController, ARSCNViewDelegate {
                     return
                 }
 
-                let node: SCNNode = self.createNewBubbleParentNode("\(prediction.0) \(prediction.1)")
+                let node: SCNNode = self.textNode("\(prediction.0) \(prediction.1)")
                 self.sceneView.scene.rootNode.addChildNode(node)
                 node.position = worldCoord
             })
         }
     }
 
-    func createNewBubbleParentNode(_ text : String) -> SCNNode {
+    func textNode(_ text : String) -> SCNNode {
         // Warning: Creating 3D Text is susceptible to crashing. To reduce chances of crashing; reduce number of polygons, letters, smoothness, etc.
 
-        // TEXT BILLBOARD CONSTRAINT
-        let billboardConstraint = SCNBillboardConstraint()
-        billboardConstraint.freeAxes = SCNBillboardAxis.Y
-
-        // BUBBLE-TEXT
-        let bubble = SCNText(string: text, extrusionDepth: CGFloat(bubbleDepth))
+        let bubble = SCNText(string: text, extrusionDepth: CGFloat(0.01))
         let font = UIFont(name: "Futura", size: 0.15)
         bubble.font = font
         bubble.firstMaterial?.diffuse.contents = UIColor.orange
         bubble.firstMaterial?.specular.contents = UIColor.white
         bubble.firstMaterial?.isDoubleSided = true
         // bubble.flatness // setting this too low can cause crashes.
-        bubble.chamferRadius = CGFloat(bubbleDepth)
+        bubble.chamferRadius = CGFloat(0.01)
 
         // BUBBLE NODE
         let (minBound, maxBound) = bubble.boundingBox
         let bubbleNode = SCNNode(geometry: bubble)
         // Centre Node - to Centre-Bottom point
-        bubbleNode.pivot = SCNMatrix4MakeTranslation( (maxBound.x - minBound.x)/2, minBound.y, bubbleDepth/2)
+        bubbleNode.pivot = SCNMatrix4MakeTranslation( (maxBound.x - minBound.x)/2, minBound.y, 0.01/2)
         // Reduce default text size
         bubbleNode.scale = SCNVector3Make(0.2, 0.2, 0.2)
 
-        // CENTRE POINT NODE
-        let sphere = SCNSphere(radius: 0.005)
-        sphere.firstMaterial?.diffuse.contents = UIColor.cyan
-        let sphereNode = SCNNode(geometry: sphere)
+        let billboardConstraint = SCNBillboardConstraint()
+        billboardConstraint.freeAxes = SCNBillboardAxis.Y
+        // to face the user
+        bubbleNode.constraints = [billboardConstraint]
 
-        // BUBBLE PARENT NODE
-        let bubbleNodeParent = SCNNode()
-        bubbleNodeParent.addChildNode(bubbleNode)
-        bubbleNodeParent.addChildNode(sphereNode)
-        bubbleNodeParent.constraints = [billboardConstraint]
-
-        return bubbleNodeParent
+        return bubbleNode
     }
 
     // MARK: - ARSCNViewDelegate

@@ -10,10 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageRecognitionViewController" customModule="ML_AR_FlowerRecognizer" customModuleProvider="target">
             <connections>
-                <outlet property="backButton" destination="BXU-zo-A0O" id="fa6-6u-Opr"/>
+                <outlet property="backButton" destination="ATo-wz-3Us" id="2Fv-eT-A4g"/>
                 <outlet property="bloomingLabel" destination="tUV-sK-3w6" id="oOd-Fx-TYl"/>
                 <outlet property="flowerNameLabel" destination="F3R-Ot-T7A" id="3K7-W4-Vct"/>
-                <outlet property="galleryImage" destination="v91-ia-Rtl" id="bCJ-Q5-IOd"/>
+                <outlet property="galleryButton" destination="pYx-fo-oRI" id="eN4-PE-tZU"/>
                 <outlet property="imageView" destination="mNr-8V-Zyq" id="XNB-Ad-Me8"/>
                 <outlet property="originLabel" destination="kJu-qL-U7R" id="PNm-Oi-Z1o"/>
                 <outlet property="probabilityLabel" destination="ZGA-mc-HAT" id="c9Z-kW-KB4"/>
@@ -95,33 +95,27 @@
                         <constraint firstAttribute="bottom" secondItem="lgJ-e7-U5S" secondAttribute="bottom" id="xqf-iV-eMy"/>
                     </constraints>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.artframe" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="v91-ia-Rtl">
-                    <rect key="frame" x="364" y="537" width="50" height="47.5"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATo-wz-3Us">
+                    <rect key="frame" x="8" y="44" width="45.5" height="31"/>
                     <color key="backgroundColor" red="0.80268041810000001" green="0.85924871079999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="50" id="a48-rF-GZs"/>
-                        <constraint firstAttribute="height" constant="50" id="enO-HE-KM7"/>
-                    </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="20"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BXU-zo-A0O">
-                    <rect key="frame" x="16" y="44" width="48" height="48"/>
-                    <color key="backgroundColor" red="0.80268041810000001" green="0.85924871079999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="48" id="hva-DI-l3T"/>
-                        <constraint firstAttribute="width" constant="48" id="vYY-78-uYY"/>
-                    </constraints>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="chevron.backward.2" catalog="system"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="20"/>
+                            <integer key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYx-fo-oRI">
+                    <rect key="frame" x="355.5" y="555" width="50.5" height="31"/>
+                    <color key="backgroundColor" red="0.80268041810000001" green="0.85924871079999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="camera" catalog="system"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="12"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </button>
@@ -129,25 +123,25 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="BXU-zo-A0O" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="0bh-rA-Kb3"/>
-                <constraint firstItem="v91-ia-Rtl" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="1ez-Sx-99W"/>
                 <constraint firstItem="mNr-8V-Zyq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="262-cc-2Va"/>
-                <constraint firstItem="rcD-lg-Dvk" firstAttribute="top" secondItem="v91-ia-Rtl" secondAttribute="bottom" id="6JH-Cc-kr4"/>
+                <constraint firstItem="rcD-lg-Dvk" firstAttribute="top" secondItem="pYx-fo-oRI" secondAttribute="bottom" id="2qs-Bz-7Xa"/>
                 <constraint firstItem="mNr-8V-Zyq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="MjO-ar-z9g"/>
+                <constraint firstItem="ATo-wz-3Us" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="RM7-TO-mDs"/>
+                <constraint firstItem="ATo-wz-3Us" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="TZ7-fY-9t3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="rcD-lg-Dvk" secondAttribute="bottom" id="Wsg-Fy-OhL"/>
-                <constraint firstItem="BXU-zo-A0O" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="bjF-j8-Qaf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rcD-lg-Dvk" secondAttribute="trailing" id="dLa-4U-80b"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pYx-fo-oRI" secondAttribute="trailing" constant="8" id="eHY-IU-lIP"/>
                 <constraint firstItem="rcD-lg-Dvk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hl8-a3-Ven"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mNr-8V-Zyq" secondAttribute="trailing" id="l1F-hA-qRD"/>
                 <constraint firstItem="rcD-lg-Dvk" firstAttribute="top" secondItem="mNr-8V-Zyq" secondAttribute="bottom" id="no1-y3-8he"/>
                 <constraint firstItem="mNr-8V-Zyq" firstAttribute="width" secondItem="rcD-lg-Dvk" secondAttribute="height" multiplier="3:2" id="xS6-5L-hbj"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="95"/>
+            <point key="canvasLocation" x="137.68115942028987" y="94.419642857142847"/>
         </view>
     </objects>
     <resources>
+        <image name="camera" catalog="system" width="128" height="94"/>
         <image name="chevron.backward.2" catalog="system" width="128" height="105"/>
-        <image name="photo.artframe" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

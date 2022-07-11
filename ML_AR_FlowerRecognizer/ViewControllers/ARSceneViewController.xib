@@ -10,7 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ARSceneViewController" customModule="ML_AR_FlowerRecognizer" customModuleProvider="target">
             <connections>
-                <outlet property="backButton" destination="Ixl-gF-7RX" id="zFU-od-ymS"/>
+                <outlet property="backButton" destination="fIe-ww-5s9" id="Rkn-Vd-Bpr"/>
+                <outlet property="clearButton" destination="ETw-9g-f5V" id="QDJ-Hc-Qfb"/>
                 <outlet property="sceneView" destination="Wuf-uG-z8A" id="qr5-UR-ZHf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,19 +24,27 @@
                 <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wuf-uG-z8A">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </arscnView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ixl-gF-7RX">
-                    <rect key="frame" x="16" y="44" width="48" height="48"/>
+                <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIe-ww-5s9">
+                    <rect key="frame" x="8" y="44" width="46" height="31"/>
                     <color key="backgroundColor" red="0.80268041810000001" green="0.85924871079999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="48" id="3JR-wo-cSe"/>
-                        <constraint firstAttribute="height" constant="48" id="ifo-cA-WNx"/>
-                    </constraints>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="chevron.backward.2" catalog="system"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="20"/>
+                            <integer key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETw-9g-f5V">
+                    <rect key="frame" x="348" y="44" width="58" height="31"/>
+                    <color key="backgroundColor" red="0.80268041810000001" green="0.85924871079999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Clear"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="12"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </button>
@@ -43,12 +52,14 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="Ixl-gF-7RX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="0NF-LD-hrg"/>
                 <constraint firstAttribute="bottom" secondItem="Wuf-uG-z8A" secondAttribute="bottom" id="4B5-uA-93F"/>
-                <constraint firstItem="Ixl-gF-7RX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="7Hz-gk-fYN"/>
+                <constraint firstItem="fIe-ww-5s9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="9yc-wE-z31"/>
                 <constraint firstItem="Wuf-uG-z8A" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="GXK-jg-dPg"/>
                 <constraint firstAttribute="trailing" secondItem="Wuf-uG-z8A" secondAttribute="trailing" id="Lt3-P7-grQ"/>
                 <constraint firstItem="Wuf-uG-z8A" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SE1-iM-JAW"/>
+                <constraint firstItem="fIe-ww-5s9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="dbe-Dx-AiL"/>
+                <constraint firstItem="ETw-9g-f5V" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gkZ-pt-M0T"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ETw-9g-f5V" secondAttribute="trailing" constant="8" id="thW-ao-00h"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="94.419642857142847"/>
         </view>

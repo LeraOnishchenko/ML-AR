@@ -20,7 +20,7 @@ class ImageRecognitionViewController: UIViewController {
     @IBOutlet private weak var wateringLabel: UILabel!
     @IBOutlet private weak var soilLabel: UILabel!
 
-    @IBOutlet private weak var galleryImage: UIImageView!
+    @IBOutlet weak var galleryButton: UIButton!
 
     private var image: UIImage?
 
@@ -34,10 +34,7 @@ class ImageRecognitionViewController: UIViewController {
     }
 
     private func configureActions() {
-        let galleryTap = UITapGestureRecognizer(target: self, action: #selector(galleryTapped))
-        galleryImage.addGestureRecognizer(galleryTap)
-        galleryImage.isUserInteractionEnabled = true
-
+        galleryButton.addTarget(self, action: #selector(galleryTapped), for: .touchUpInside)
         backButton.addTarget(self, action: #selector(moveBack), for: .touchUpInside)
     }
 
