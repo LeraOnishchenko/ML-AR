@@ -59,14 +59,18 @@ class ImageRecognitionViewController: UIViewController {
                   showFlowerNotRecognized()
                   return
               }
+        self.setInfo(FlowerPredictionInfo(flower: flower, prediction: prediction))
+    }
+
+    private func setInfo(_ info: FlowerPredictionInfo) {
         DispatchQueue.main.async {
-            self.flowerNameLabel.text = prediction.0
-            self.probabilityLabel.text = "\(prediction.1 * 100) %"
-            self.originLabel.text = "🏠 \(flower.description.origin)"
-            self.bloomingLabel.text = "🌸 \(flower.description.blooming)"
-            self.sunLabel.text = "☀️ \(flower.maintenance.sunlight)"
-            self.wateringLabel.text = "💧 \(flower.maintenance.watering)"
-            self.soilLabel.text = "🌿 \(flower.maintenance.soil)"
+            self.flowerNameLabel.text = info.name
+            self.probabilityLabel.text = info.probability
+            self.originLabel.text = info.origin
+            self.bloomingLabel.text = info.blooming
+            self.sunLabel.text = info.sunlight
+            self.wateringLabel.text = info.watering
+            self.soilLabel.text = info.soil
         }
     }
 

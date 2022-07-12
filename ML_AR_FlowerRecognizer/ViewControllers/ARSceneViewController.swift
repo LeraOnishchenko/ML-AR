@@ -16,6 +16,7 @@ class ARSceneViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var clearButton: UIButton!
 
     private let predictor = Predictor()
+    private let flowerSearcher = FlowerSearcher()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +70,9 @@ class ARSceneViewController: UIViewController, ARSCNViewDelegate {
 
         if let closestResult = results.first {
             let transform : matrix_float4x4 = closestResult.worldTransform
-            let worldCoord : SCNVector3 = SCNVector3Make(transform.columns.3.x, transform.columns.3.y, transform.columns.3.z)
+            let worldCoord : SCNVector3 = SCNVector3Make(transform.columns.3.x,
+                                                         transform.columns.3.y,
+                                                         transform.columns.3.z)
 
             let pixbuff : CVPixelBuffer? = (sceneView.session.currentFrame?.capturedImage)
             guard let pixbuff = pixbuff else {
@@ -79,11 +82,13 @@ class ARSceneViewController: UIViewController, ARSCNViewDelegate {
 
             predictor.predict(image: ciImage, completion: { [weak self] predictions in
                 guard let self = self,
-                      let prediction = predictions?.first else {
+                      let prediction = predictions?.first,
+                      let flower = self.flowerSearcher.findFlowerWith(name: prediction.0) else {
                     return
                 }
 
-                let node: SCNNode = self.textNode("\(prediction.0) \(prediction.1)")
+                let node: SCNNode = self.textNode(FlowerPredictionInfo(flower: flower,
+                                                                       prediction: prediction).allInfo)
                 self.sceneView.scene.rootNode.addChildNode(node)
                 node.position = worldCoord
             })

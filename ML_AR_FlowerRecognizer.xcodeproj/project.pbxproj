@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0411F9C9287C9346004853E6 /* FlowerPredictionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0411F9C8287C9346004853E6 /* FlowerPredictionInfo.swift */; };
 		048BF562286BB4A2007EB9A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BF561286BB4A2007EB9A3 /* AppDelegate.swift */; };
 		048BF564286BB4A2007EB9A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BF563286BB4A2007EB9A3 /* SceneDelegate.swift */; };
 		048BF569286BB4A2007EB9A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048BF567286BB4A2007EB9A3 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0411F9C8287C9346004853E6 /* FlowerPredictionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerPredictionInfo.swift; sourceTree = "<group>"; };
 		048BF55E286BB4A2007EB9A3 /* ML_AR_FlowerRecognizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ML_AR_FlowerRecognizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		048BF561286BB4A2007EB9A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		048BF563286BB4A2007EB9A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			children = (
 				04BFC7FD2871EE9E007DAA19 /* Flower.swift */,
 				04BFC7FF2871EECE007DAA19 /* FlowerSearcher.swift */,
+				0411F9C8287C9346004853E6 /* FlowerPredictionInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				04BFC778286D9E03007DAA19 /* ButtonsViewController.swift in Sources */,
 				04BFC8322875B263007DAA19 /* ARSceneViewController.swift in Sources */,
 				04BFC80A2871FCEE007DAA19 /* Predictor.swift in Sources */,
+				0411F9C9287C9346004853E6 /* FlowerPredictionInfo.swift in Sources */,
 				048BF564286BB4A2007EB9A3 /* SceneDelegate.swift in Sources */,
 				04BFC80E2872009E007DAA19 /* MyPlantsClassifier.mlmodel in Sources */,
 			);
