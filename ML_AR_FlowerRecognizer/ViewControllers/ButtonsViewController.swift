@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ButtonsViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ButtonsViewController: UIViewController, UINavigationControllerDelegate {
 
     @IBOutlet private weak var photoImage: UIImageView!
     @IBOutlet private weak var cameraImage: UIImageView!
@@ -29,10 +29,11 @@ class ButtonsViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
 
     @objc func galleryTapped() {
-        let imagePickerVC = UIImagePickerController()
-        imagePickerVC.delegate = self
-        imagePickerVC.sourceType = .photoLibrary
-        present(imagePickerVC, animated: true)
+        let vc = ImageRecognitionViewController(nibName: "ImageRecognitionViewController", bundle: nil)
+        vc.setImage(UIImage(systemName: "photo.artframe")!)
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
 
     @objc func cameraTapped() {
@@ -49,16 +50,5 @@ class ButtonsViewController: UIViewController, UIImagePickerControllerDelegate, 
         alert.addAction(UIAlertAction(title: "Ok",
                                       style: .default))
         self.present(alert, animated: true, completion: nil)
-    }
-
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let image = info[.originalImage] as! UIImage
-        picker.dismiss(animated: true)
-
-        let vc = ImageRecognitionViewController(nibName: "ImageRecognitionViewController", bundle: nil)
-        vc.setImage(image)
-        vc.modalTransitionStyle = .crossDissolve
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
     }
 }
