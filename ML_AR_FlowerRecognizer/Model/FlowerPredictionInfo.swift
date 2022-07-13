@@ -36,13 +36,6 @@ struct FlowerPredictionInfo {
     }
 
     var allInfo: String {
-        """
-        \(prediction.0) - \(prediction.1 * 100) %
-        🏠 \(flower.description.origin)
-        🌸 \(flower.description.blooming)
-        ☀️ \(flower.maintenance.sunlight)
-        💧 \(flower.maintenance.watering)
-        🌿 \(flower.maintenance.soil)
-        """
+        "\(prediction.0) - \(prediction.1 * 100) %\nOrigin: \(flower.description.origin)\nBlooming: \(flower.description.blooming)\nSun: \(flower.maintenance.sunlight)\nWater: \(flower.maintenance.watering)\nSoil: \(flower.maintenance.soil)"
     }
 }

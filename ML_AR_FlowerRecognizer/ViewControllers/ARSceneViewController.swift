@@ -87,64 +87,33 @@ class ARSceneViewController: UIViewController, ARSCNViewDelegate {
                     return
                 }
 
-                let node: SCNNode = self.textNode("\(prediction.0) \(prediction.1)")
+                let info = FlowerPredictionInfo(flower: flower, prediction: prediction)
+                let node: SCNNode = self.createTitleNode(info.allInfo)
                 self.sceneView.scene.rootNode.addChildNode(node)
                 node.position = worldCoord
             })
         }
     }
+    
+    private func createTitleNode(_ text : String) -> SCNNode {
+        let title = SCNText(string: text, extrusionDepth: 0.6)
+        title.firstMaterial?.diffuse.contents = UIColor.orange
+        title.firstMaterial?.specular.contents = UIColor.white
+        title.firstMaterial?.isDoubleSided = true
+        title.chamferRadius = CGFloat(0.01)
 
-    func textNode(_ text : String) -> SCNNode {
-        // Warning: Creating 3D Text is susceptible to crashing. To reduce chances of crashing; reduce number of polygons, letters, smoothness, etc.
+        let titleNode = SCNNode(geometry: title)
+        titleNode.scale = SCNVector3(0.005, 0.005, 0.01)
 
-        let bubble = SCNText(string: text, extrusionDepth: CGFloat(0.01))
-        let font = UIFont(name: "Futura", size: 0.15)
-        bubble.font = font
-        bubble.firstMaterial?.diffuse.contents = UIColor.orange
-        bubble.firstMaterial?.specular.contents = UIColor.white
-        bubble.firstMaterial?.isDoubleSided = true
-        // bubble.flatness // setting this too low can cause crashes.
-        bubble.chamferRadius = CGFloat(0.01)
-
-        // BUBBLE NODE
-        let (minBound, maxBound) = bubble.boundingBox
-        let bubbleNode = SCNNode(geometry: bubble)
+//        let (minBound, maxBound) = bubble.boundingBox
+//        let bubbleNode = SCNNode(geometry: bubble)
         // Centre Node - to Centre-Bottom point
-        bubbleNode.pivot = SCNMatrix4MakeTranslation( (maxBound.x - minBound.x)/2, minBound.y, 0.01/2)
-        // Reduce default text size
-        bubbleNode.scale = SCNVector3Make(0.2, 0.2, 0.2)
+//        bubbleNode.pivot = SCNMatrix4MakeTranslation( (maxBound.x - minBound.x)/2, minBound.y, 0.01/2)
 
         let billboardConstraint = SCNBillboardConstraint()
         billboardConstraint.freeAxes = SCNBillboardAxis.Y
         // to face the user
-        bubbleNode.constraints = [billboardConstraint]
-
-        return bubbleNode
-    }
-
-    // MARK: - ARSCNViewDelegate
-
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
-
-        return node
-    }
-*/
-
-    func session(_ session: ARSession, didFailWithError error: Error) {
-        // Present an error message to the user
-
-    }
-
-    func sessionWasInterrupted(_ session: ARSession) {
-        // Inform the user that the session has been interrupted, for example, by presenting an overlay
-
-    }
-
-    func sessionInterruptionEnded(_ session: ARSession) {
-        // Reset tracking and/or remove existing anchors if consistent tracking is required
-
+        titleNode.constraints = [billboardConstraint]
+        return titleNode
     }
 }
