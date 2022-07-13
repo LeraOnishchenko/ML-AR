@@ -72,7 +72,7 @@ class ARSceneViewController: UIViewController, ARSCNViewDelegate {
             let transform : matrix_float4x4 = closestResult.worldTransform
             let worldCoord : SCNVector3 = SCNVector3Make(transform.columns.3.x,
                                                          transform.columns.3.y,
-                                                         transform.columns.3.z)
+                                                         -0.5)
 
             let pixbuff : CVPixelBuffer? = (sceneView.session.currentFrame?.capturedImage)
             guard let pixbuff = pixbuff else {

@@ -78,10 +78,20 @@ class ImageRecognitionViewController: UIViewController {
                                       style: .default))
         self.present(alert, animated: true, completion: nil)
     }
+    private func clearLabels(){
+        self.flowerNameLabel.text = nil
+        self.probabilityLabel.text = nil
+        self.originLabel.text = nil
+        self.bloomingLabel.text = nil
+        self.sunLabel.text = nil
+        self.wateringLabel.text = nil
+        self.soilLabel.text = nil
+    }
 }
 
 extension ImageRecognitionViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        clearLabels()
         let image = info[.originalImage] as! UIImage
         imageView.image = image
         DispatchQueue.global(qos: .userInteractive).async {

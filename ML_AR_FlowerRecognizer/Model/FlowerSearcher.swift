@@ -10,9 +10,12 @@ import Foundation
 final class FlowerSearcher {
     @discardableResult
     func findFlowerWith(name: String) -> Flower? {
-        let urlString = "https://raw.githubusercontent.com/irazubrytska/FlowerRepo/main/\(name).json"
+        let urlString = NSURLComponents()
+                urlString.scheme = "https"
+                urlString.host = "raw.githubusercontent.com"
+                urlString.path = "/irazubrytska/FlowerRepo/main/\(name).json"
 
-        guard let url = URL(string: urlString) else {
+        guard let url = urlString.url else {
             print("ERROR - invalid url")
             return nil
         }
