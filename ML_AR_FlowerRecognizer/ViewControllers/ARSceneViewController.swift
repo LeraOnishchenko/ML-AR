@@ -87,8 +87,7 @@ class ARSceneViewController: UIViewController, ARSCNViewDelegate {
                     return
                 }
 
-                let node: SCNNode = self.textNode(FlowerPredictionInfo(flower: flower,
-                                                                       prediction: prediction).allInfo)
+                let node: SCNNode = self.textNode("\(prediction.0) \(prediction.1)")
                 self.sceneView.scene.rootNode.addChildNode(node)
                 node.position = worldCoord
             })
