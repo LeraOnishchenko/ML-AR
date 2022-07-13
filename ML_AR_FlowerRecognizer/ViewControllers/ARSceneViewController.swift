@@ -97,18 +97,16 @@ class ARSceneViewController: UIViewController, ARSCNViewDelegate {
     
     private func createTitleNode(_ text : String) -> SCNNode {
         let title = SCNText(string: text, extrusionDepth: 0.6)
-        title.firstMaterial?.diffuse.contents = UIColor.orange
+        title.firstMaterial?.diffuse.contents = UIColor.green
         title.firstMaterial?.specular.contents = UIColor.white
         title.firstMaterial?.isDoubleSided = true
         title.chamferRadius = CGFloat(0.01)
 
         let titleNode = SCNNode(geometry: title)
-        titleNode.scale = SCNVector3(0.005, 0.005, 0.01)
+        titleNode.scale = SCNVector3(0.001, 0.001, 0.005)
 
-//        let (minBound, maxBound) = bubble.boundingBox
-//        let bubbleNode = SCNNode(geometry: bubble)
-        // Centre Node - to Centre-Bottom point
-//        bubbleNode.pivot = SCNMatrix4MakeTranslation( (maxBound.x - minBound.x)/2, minBound.y, 0.01/2)
+        let (minBound, maxBound) = title.boundingBox
+        titleNode.pivot = SCNMatrix4MakeTranslation( (maxBound.x - minBound.x)/2, minBound.y, 0.01/2)
 
         let billboardConstraint = SCNBillboardConstraint()
         billboardConstraint.freeAxes = SCNBillboardAxis.Y
